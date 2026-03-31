@@ -1,6 +1,7 @@
-# PySCo-EFT v2 by Himanish Ganjoo
-## LUX, Observatoire de Paris
-## March 2026
+# PySCo-EFT v2
+### By Himanish Ganjoo
+### LUX, Observatoire de Paris
+### March 2026
 
 PySCo-EFT is based on PySCo by Michel-Andrès Breton (https://github.com/mianbreton/pysco)
 
