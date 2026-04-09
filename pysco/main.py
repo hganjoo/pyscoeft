@@ -4,9 +4,9 @@ Main executable module to run cosmological N-body simulations
 
 Usage: python main.py -c param.ini
 """
-__author__ = "Michel-Andrès Breton"
+__author__ = "Michel-Andrès Breton / Himanish Ganjoo"
 __version__ = "1.0.0"
-__email__ = "michel-andres.breton@obspm.fr"
+__email__ = "michel-andres.breton@obspm.fr / Himanish.Ganjoo@obspm.fr"
 __status__ = "Development"
 
 import ast
@@ -190,21 +190,20 @@ def main():
 
 
 if __name__ == "__main__":
+
     from rich import print
 
     print(
-        r"""
-        _______           _______  _______  _______ 
-        (  ____ )|\     /|(  ____ \(  ____ \(  ___  )
-        | (    )|( \   / )| (    \/| (    \/| (   ) |
-        | (____)| \ (_) / | (_____ | |      | |   | |
-        |  _____)  \   /  (_____  )| |      | |   | |
-        | (         ) (         ) || |      | |   | |
-        | )         | |   /\____) || (____/\| (___) |
-        |/          \_/   \_______)(_______/(_______)
-                                                    
-        """
-    )
+    r"""
+ ____  __   __ ____    ____   ___    _____  _____  _____ 
+|  _ \ \ \ / // ___|  / ___| / _ \  | ____||  ___||_   _|
+| |_) | \ V / \___ \ | |    | | | | |  _|  | |_     | |  
+|  __/   | |   ___) || |___ | |_| | | |___ |  _|    | |  
+|_|      |_|  |____/  \____| \___/  |_____||_|      |_|  
+    """
+)
+    
+
     print(f"VERSION: {__version__}")
     print(f"{__author__}")
     print(f"{'':{'-'}<{71}}\n")
