@@ -20,4 +20,6 @@ theory: 'eft'
 - scaling: the time variation of the alphaB and alphaM, proportional to DE density ('de') or scale factor ('a')
 - nb: the exponent for the time variation of alphaB
 - nm: the exponent for the time variation of alphaM
+- Npre_FAS: the number of pre-cycles for the EFT multigrid
+- Npost_FAS: the number of post-cycles for the EFT multigrid
 
