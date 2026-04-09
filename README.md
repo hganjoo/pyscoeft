@@ -52,6 +52,7 @@ PySCo is a multi-threaded Particle-Mesh code (no MPI parallelization) for cosmol
 - $f(R)$ model from [Hu & Sawicki (2007)](https://ui.adsabs.harvard.edu/abs/2007PhRvD..76f4004H/abstract).
 - MOND gravity (quasi-linear formulation) from [Milgrom (2010)](https://ui.adsabs.harvard.edu/abs/2010MNRAS.403..886M/abstract).
 - Parametrized gravity (scale independent)
+- Effective Field Theory of Dark Energy (cubic screening) from [Cusin et al (2018)](https://ui.adsabs.harvard.edu/abs/2018JCAP...04..061C/abstract).
 
 The goal is to develop a Python-based N-body code that is user-friendly and efficient. Python was chosen for its widespread use and rapid development capabilities, making it well-suited for collaborative open-source projects. To address performance issues in Python, we utilize [Numba](https://github.com/numba/numba), a high-performance library that compiles Python functions using LLVM. Additionally, Numba facilitates straightforward loop parallelization.
 
