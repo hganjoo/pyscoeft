@@ -7,6 +7,7 @@ name = "pysco-nbody"
 version = "1.0.0"
 authors = [
     { name = "Michel-Andrès Breton", email = "michel-andres.breton@obspm.fr" },
+    { name = "Himanish Ganjoo", email = "Himanish.Ganjoo@obspm.fr" }
 ]
 description = "A Python library to run N-body simulations with modified gravity"
 readme = "README.md"
@@ -26,8 +27,8 @@ dependencies = [
     "pyarrow",
     "h5py",
     "rich",
-    "Pylians", # Only for reading Gadget snapshots
-    "icc-rt", # Optional
+    #"Pylians", # Only for reading Gadget snapshots
+    #"icc-rt", # Optional
     "pyfftw", # Optional
 ]
 
