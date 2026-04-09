@@ -18,6 +18,8 @@ param = {
     "scaling": "de",
     "nb": 1.0,
     "nm": 1.0,
+    "Npre_FAS": 5,
+    "Npost_FAS": 5,
     # "fR_logfR0": 5,
     # "fR_n": 1,
     # "mond_function": "simple",
