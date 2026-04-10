@@ -152,6 +152,77 @@ There are two ways to use Pysco, either as command line with parameter file, or 
 
 > Numba uses _Just-in-Time_ and/or _Ahead-of-Time_ compilation, meaning that for the former the function is compiled when it is reached for the first time, while the latter is compiled before running the code (happens when the input/output types are specified in the function decorator). This means that when the code is run (or imported) for the first time, it will spend some time compiling the functions. These are then cached and subsequent runs will not have to compile the functions again.
 
+
+#### As package (recommended)
+
+To obtain the same as above, one first needs to import the pysco module, then build a dictionnary (or Pandas Series) containing the user inputs. There are two example files in the `examples` folder illustrating this. 
+
+```python
+# examples/example_eft.py
+from pathlib import Path
+import pysco
+
+path = Path(__file__).parent.absolute()
+
+param = {
+    "nthreads": 1,
+    "theory": "eft",
+    "eftlin": False,
+    "alphaB0": -0.24,
+    "alphaM0": 0.0,
+    "scaling": "de",
+    "nb": 1.0,
+    "nm": 1.0,
+    "Npre_FAS": 5,
+    "Npost_FAS": 5,
+    # "fR_logfR0": 5,
+    # "fR_n": 1,
+    # "mond_function": "simple",
+    # "mond_g0": 1.2,
+    # "mond_scale_factor_exponent": 0,
+    # "mond_alpha": 1,
+    # "parametrized_mu0": 0.1,
+    "H0": 72,
+    "Om_m": 0.25733,
+    "T_cmb": 2.726,
+    "N_eff": 3.044,
+    "w0": -1.0,
+    "wa": 0.0,
+    "boxlen": 100,
+    "ncoarse": 7,
+    "npart": 128**3,
+    "z_start": 49,
+    "seed": 42,
+    "position_ICS": "center",
+    "fixed_ICS": False,
+    "paired_ICS": False,
+    "dealiased_ICS": False,
+    "power_spectrum_file": f"{path}/pk_lcdmw7v2.dat",
+    "initial_conditions": "2LPT",
+    "base": f"{path}/boxlen100_n128_lcdmw7v2_00000/",
+    "z_out": "[10, 5, 2, 1, 0.5, 0]",
+    "output_snapshot_format": "HDF5",
+    "save_power_spectrum": "yes",
+    "integrator": "leapfrog",
+    "n_reorder": 50,
+    "mass_scheme": "TSC",
+    "Courant_factor": 1.0,
+    "max_aexp_stepping": 10,
+    "linear_newton_solver": "multigrid",
+    "gradient_stencil_order": 5,
+    "Npre": 2,
+    "Npost": 1,
+    "epsrel": 1e-2,
+    "verbose": 1,
+}
+
+# Run simulation
+pysco.run(param)
+
+print("Run completed!")
+
+```
+
 #### As command line
 
 _To run PySCo with command line it is not necessary to pip install the package. However, one must still at least install the depdendecies (see [Prerequisites](#prerequisites))_
@@ -232,77 +303,6 @@ Run the command line
 python pysco/main.py -c examples/param.ini
 ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-#### As package
-
-To obtain the same as above, one first need to import the pysco module, then build a dictionnary (or Pandas Series) containing the user inputs. There are two example files in the `examples` folder illustrating this. 
-
-```python
-# examples/example_eft.py
-from pathlib import Path
-import pysco
-
-path = Path(__file__).parent.absolute()
-
-param = {
-    "nthreads": 1,
-    "theory": "eft",
-    "eftlin": False,
-    "alphaB0": -0.24,
-    "alphaM0": 0.0,
-    "scaling": "de",
-    "nb": 1.0,
-    "nm": 1.0,
-    "Npre_FAS": 5,
-    "Npost_FAS": 5,
-    # "fR_logfR0": 5,
-    # "fR_n": 1,
-    # "mond_function": "simple",
-    # "mond_g0": 1.2,
-    # "mond_scale_factor_exponent": 0,
-    # "mond_alpha": 1,
-    # "parametrized_mu0": 0.1,
-    "H0": 72,
-    "Om_m": 0.25733,
-    "T_cmb": 2.726,
-    "N_eff": 3.044,
-    "w0": -1.0,
-    "wa": 0.0,
-    "boxlen": 100,
-    "ncoarse": 7,
-    "npart": 128**3,
-    "z_start": 49,
-    "seed": 42,
-    "position_ICS": "center",
-    "fixed_ICS": False,
-    "paired_ICS": False,
-    "dealiased_ICS": False,
-    "power_spectrum_file": f"{path}/pk_lcdmw7v2.dat",
-    "initial_conditions": "2LPT",
-    "base": f"{path}/boxlen100_n128_lcdmw7v2_00000/",
-    "z_out": "[10, 5, 2, 1, 0.5, 0]",
-    "output_snapshot_format": "HDF5",
-    "save_power_spectrum": "yes",
-    "integrator": "leapfrog",
-    "n_reorder": 50,
-    "mass_scheme": "TSC",
-    "Courant_factor": 1.0,
-    "max_aexp_stepping": 10,
-    "linear_newton_solver": "multigrid",
-    "gradient_stencil_order": 5,
-    "Npre": 2,
-    "Npost": 1,
-    "epsrel": 1e-2,
-    "verbose": 1,
-}
-
-# Run simulation
-pysco.run(param)
-
-print("Run completed!")
-
-```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
