@@ -56,6 +56,10 @@ PySCo is a multi-threaded Particle-Mesh code (no MPI parallelization) for cosmol
 
 The goal is to develop a Python-based N-body code that is user-friendly and efficient. Python was chosen for its widespread use and rapid development capabilities, making it well-suited for collaborative open-source projects. To address performance issues in Python, we utilize [Numba](https://github.com/numba/numba), a high-performance library that compiles Python functions using LLVM. Additionally, Numba facilitates straightforward loop parallelization.
 
+### Note
+
+The EFTofDE component of this code has been tested heavily for `w0=-1` and `wa=0`, `scaling='de'` and `nb=1`,`nm=1`. The w0-wa cosmology and other scalings have not been rigorously tested. 
+
 <a href="https://doi.org/10.5281/zenodo.19494552"><img src="https://zenodo.org/badge/1196999415.svg" alt="DOI"></a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
