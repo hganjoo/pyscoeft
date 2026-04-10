@@ -64,27 +64,17 @@ The goal is to develop a Python-based N-body code that is user-friendly and effi
 
 ### Installation
 
-The first method is to pip install pysco using
+Install the package directly from source
 
 ```sh
-python -m pip install pysco-nbody
-```
-
-Otherwise, it is possible to install directly from source
-
-```sh
-git clone https://github.com/mianbreton/pysco.git
-cd pysco
+git clone https://github.com/hganjoo/pyscoeft.git
+cd pyscoeft
 python -m pip install -e .
 ```
 
-It is then possible to access other branches. If one wants to use the `feature/AwesomeNewFeature` branch but without having to download the source directory, it is possible to pip install directly from github
 
-```sh
-python -m pip install git+https://github.com/mianbreton/pysco.git@feature/AwesomeNewFeature
-```
 
-> :warning: **If the first method does not work because of a dependency issue** (for example, PyFFTW and icc-rt might not work for on some mac versions): use the second method, and comment the lines referring to the problematic dependencies in pyproject.toml
+> :warning: **If the install does not work because of a dependency issue** (for example, PyFFTW and icc-rt might not work for on some mac versions): comment the lines referring to the problematic dependencies in pyproject.toml
 
 ### Prerequisites
 
@@ -172,7 +162,7 @@ Move to the main Pysco directory
 cd pysco/
 ```
 
-A example parameter file is available in `examples/param.ini`. **All strings (except paths and filenames) are case insensitive**.
+Example parameter files are available in `examples/param.ini` and `examples/param_eft.ini` . **All strings (except paths and filenames) are case insensitive**.
 
 ```sh
 # examples/param.ini
@@ -246,10 +236,10 @@ python pysco/main.py -c examples/param.ini
 
 #### As package
 
-To obtain the same as above, one first need to import the pysco module, then build a dictionnary (or Pandas Series) containing the user inputs.
+To obtain the same as above, one first need to import the pysco module, then build a dictionnary (or Pandas Series) containing the user inputs. There are two example files in the `examples` folder illustrating this. 
 
 ```python
-# examples/example.py
+# examples/example_eft.py
 from pathlib import Path
 import pysco
 
@@ -257,7 +247,15 @@ path = Path(__file__).parent.absolute()
 
 param = {
     "nthreads": 1,
-    "theory": "newton",
+    "theory": "eft",
+    "eftlin": False,
+    "alphaB0": -0.24,
+    "alphaM0": 0.0,
+    "scaling": "de",
+    "nb": 1.0,
+    "nm": 1.0,
+    "Npre_FAS": 5,
+    "Npost_FAS": 5,
     # "fR_logfR0": 5,
     # "fR_n": 1,
     # "mond_function": "simple",
