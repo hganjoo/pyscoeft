@@ -23,3 +23,7 @@ theory: 'eft'
 - Npre_FAS: the number of pre-cycles for the EFT multigrid
 - Npost_FAS: the number of post-cycles for the EFT multigrid
 
+### Note
+
+The EFTofDE component of this code has been tested heavily for `w0=-1` and `wa=0`, `scaling='de'` and `nb=1`,`nm=1`. The w0-wa cosmology and other scalings have not been rigorously tested. 
+
