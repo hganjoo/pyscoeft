@@ -1,4 +1,4 @@
-# PySCo-EFT v2
+# PySCo-EFT v1.0.0
 ### By Himanish Ganjoo
 ### LUX, Observatoire de Paris
 ### March 2026
