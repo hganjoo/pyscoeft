@@ -4,7 +4,7 @@ build-backend = "pdm.backend"
 
 [project]
 name = "pysco-eft"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
     { name = "Michel-Andrès Breton", email = "michel-andres.breton@obspm.fr" },
     { name = "Himanish Ganjoo", email = "Himanish.Ganjoo@obspm.fr" }
