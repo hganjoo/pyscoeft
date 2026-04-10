@@ -61,6 +61,7 @@ The goal is to develop a Python-based N-body code that is user-friendly and effi
 The EFTofDE component of this code has been tested heavily for `w0=-1` and `wa=0`, `scaling='de'` and `nb=1`,`nm=1`. The w0-wa cosmology and other scalings have not been rigorously tested. 
 
 <a href="https://doi.org/10.5281/zenodo.19494552"><img src="https://zenodo.org/badge/1196999415.svg" alt="DOI"></a>
+[![DOI](https://zenodo.org/badge/1196999415.svg)](https://doi.org/10.5281/zenodo.19494552)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
