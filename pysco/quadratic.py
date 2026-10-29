@@ -413,7 +413,7 @@ def jacobi(
                     pi_o = pi[ix,iy,iz]
                     qs = solution_quadratic_equation(pi_old,b[ix,iy,iz],ix,iy,iz,h,C2,C4,alphaB,alphaM,H,a)
                     pi[ix,iy,iz] = (1 - w)*qs + w*pi_o
-                    pi[ix,iy,iz] = qs
+                    #pi[ix,iy,iz] = qs
 
 
 @njit(
@@ -464,7 +464,7 @@ def jacobi_with_rhs(
                     pi_o = pi[ix,iy,iz]
                     qs = solution_quadratic_equation_with_rhs(pi_old,b[ix,iy,iz],ix,iy,iz,h,C2,C4,alphaB,alphaM,H,a,rhs[ix,iy,iz])
                     pi[ix,iy,iz] = (1 - w)*qs + w*pi_o
-                    pi[ix,iy,iz] = qs
+                    #pi[ix,iy,iz] = qs
 
 
 @njit(
