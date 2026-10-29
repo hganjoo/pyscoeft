@@ -286,8 +286,9 @@ def initialise_potential(
             param["compute_additional_field"]
             and "eft" == param["theory"].casefold() and (not param["eftlin"]) #change
         ):
-            potential = quadratic.initialise_potential(rhs,h,param["C2"],param["alphaB"],param["alphaM"]
-                                                       )
+            #potential = quadratic.initialise_potential(rhs,h,param["C2"],param["alphaB"],param["alphaM"])
+            pass
+                                                       
             
             
         

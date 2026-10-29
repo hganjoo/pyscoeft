@@ -410,9 +410,9 @@ def jacobi(
     for ix in range(-1,ncells_1d - 1):
             for iy in range(-1,ncells_1d - 1):
                 for iz in range(-1,ncells_1d - 1):
-                    #pi_o = pi[ix,iy,iz]
+                    pi_o = pi[ix,iy,iz]
                     qs = solution_quadratic_equation(pi_old,b[ix,iy,iz],ix,iy,iz,h,C2,C4,alphaB,alphaM,H,a)
-                    #pi[ix,iy,iz] = (1 - w)*qs + w*pi_o
+                    pi[ix,iy,iz] = (1 - w)*qs + w*pi_o
                     pi[ix,iy,iz] = qs
 
 
@@ -463,7 +463,7 @@ def jacobi_with_rhs(
                 for iz in range(-1,ncells_1d - 1):
                     pi_o = pi[ix,iy,iz]
                     qs = solution_quadratic_equation_with_rhs(pi_old,b[ix,iy,iz],ix,iy,iz,h,C2,C4,alphaB,alphaM,H,a,rhs[ix,iy,iz])
-                    #pi[ix,iy,iz] = (1 - w)*qs + w*pi_o
+                    pi[ix,iy,iz] = (1 - w)*qs + w*pi_o
                     pi[ix,iy,iz] = qs
 
 
